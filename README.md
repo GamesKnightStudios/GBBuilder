@@ -5,25 +5,21 @@ This is a simple example repository for building gameboy games using the Game Bo
  - [ ] Add Linux support
 
 # Known issues
- - GBDK must be placed in a path with a short path location. This is due a 74 character limit when refrencing files. This is fixed by placing gbdk in 'C:\gbdk'. This is issue is identified with the following error when building: 
- ```
- [LONGPATH]/gbdk/lib/small/asxxxx/gb/cr.: cannot open.
- ```
 
 # Requirements
- - GBDK (Recommended: v2.85-3. Script provided in 3rdparty folder to quickly download the recommended version)
+ - GBDK (Recommended: v3.2. Script provided in 3rdparty folder to quickly download the recommended version)
  - BGB (Recommended: 1.5.8. Script provided in 3rdparty folder to quickly download the latest version)
 
 # Build
-Download and extract GBDK to a short path on your machine (e.g. 'C:\gbdk'). Or use the automatic script 'download_3rdparty.bat' in 'scripts' folder. This will automatically download and extract GBDK to 'C:\gbdk'. This must be run as admin to be allowed access to create 'C:\gbdk' folder.
+Download and extract GBDK to 3rdparty gbdk folder ('3rdparty\gbdk-3.2\gbdk'). Or use the automatic script 'download_3rdparty.bat' in 'scripts' folder. This will automatically download and extract GBDK to '3rdparty\gbdk-3.2\gbdk'.
 Build gameboy hello world code using GBDK. The helloworld example is 
-This can be done using the automatic build script 'build.bat' provided in 'scripts' folder. This assumes the GBDK location is 'C:\gbdk'. Or manually using the command line:
+This can be done using the automatic build script 'build.bat' provided in 'scripts' folder. This assumes the GBDK location is '3rdparty\gbdk-3.2\gbdk'. Or manually using the command line:
 ```
 cd PATH_TO_REPO
 mkdir build
 cd build
-C:\gbdk\bin\lcc -Wa-l -Wl-m -Wl-j -DUSE_SFR_FOR_REG -c -o helloworld.o ..\games\helloworld\helloworld.c
-C:\gbdk\bin\lcc -Wa-l -Wl-m -Wl-j -DUSE_SFR_FOR_REG -o helloworld.gb helloworld.o
+..\3rdparty\gbdk-3.2\gbdk\bin\lcc -Wa-l -Wl-m -Wl-j -DUSE_SFR_FOR_REG -c -o helloworld.o ..\games\helloworld\helloworld.c
+..\3rdparty\gbdk-3.2\gbdk\bin\lcc -Wa-l -Wl-m -Wl-j -DUSE_SFR_FOR_REG -o helloworld.gb helloworld.o
 ```
 This will build the app to a build folder in this repository.  
 The 'helloworld.gb' file in this build folder is the gameboy game that has just been compiled. 

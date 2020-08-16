@@ -5,13 +5,11 @@ SETLOCAL EnableDelayedExpansion
 SET initcwd=%cd%
 SET scriptpath=%~dp0
 cd %scriptpath:~0,-1%
-set "gbdk_version=2.95-3"
+set "gbdk_version=3.2"
 
 :: set default option values
 set option_clean=false
 set option_uninstall=false
-set option_mirror=""
-set mirror=""
 
 :: find options in arguments
 FOR %%a IN (%*) DO (
@@ -23,30 +21,14 @@ FOR %%a IN (%*) DO (
         set option_clean=true
         set option_uninstall=true
     )
-    if "!arg!"=="--mirror" (
-        set option_mirror=true
-        set /a search_arg_num=!arg_count!+1
-        set /a arg_count_b=0
-        :: TODO check variable was found at index
-        FOR %%b IN (%*) DO (
-            Set /a arg_count_b+=1
-            if !arg_count_b!==!search_arg_num! (
-                set mirror=%%b
-            )
-        )
-    )
-)
-
-if "%option_mirror%"=="true" (
-    set "mirror_str=?use_mirror=%mirror%"
 )
 
 :: download file
-SET downloadfile=gbdk-%gbdk_version%-win32.zip
+SET downloadfile=gbdk-%gbdk_version%-win.zip
 :: url for downloading gbdk
-set url=https://sourceforge.net/projects/gbdk/files/gbdk-win32/%gbdk_version%/gbdk-%gbdk_version%-win32.zip/download%mirror_str%
+set url=https://github.com/Zal0/gbdk-2020/releases/download/v%gbdk_version%/%downloadfile%
 :: folder where download is placed
-SET "downloadfolder=C:"
+SET downloadfolder=%cd%
 :: full output filepath
 SET downloadpath=%downloadfolder%\%downloadfile%
 
