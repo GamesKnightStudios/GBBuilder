@@ -18,9 +18,9 @@ FOR %%a IN (%*) DO (
 
 ::set "gbdk_path=%scriptpath:~0,-1%\..\3rdparty\gbdk-2.95-3\gbdk"
 set "gbdk_path=C:\gbdk"
-set "src_dir=src"
+set "src_dir=games\helloworld\src"
 set "build_dir=%scriptpath:~0,-1%\..\build"
-set "app_name=main"
+set "app_name=helloworld"
 
 if "%option_clean%"=="true" (
     rmdir /Q /S %build_dir%
