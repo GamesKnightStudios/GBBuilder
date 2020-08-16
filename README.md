@@ -15,7 +15,7 @@ This is a simple example repository for building gameboy games using the Game Bo
  - BGB (Recommended: 1.5.8. Script provided in 3rdparty folder to quickly download the latest version)
 
 # Build
-Download and extract GBDK to a short path on your machine (e.g. 'C:\gbdk'). Or use the automatic script 'download_3rdparty.bat' in 'scripts' folder. This will automatically download and extract GBDK to 'C:\gbdk'.  
+Download and extract GBDK to a short path on your machine (e.g. 'C:\gbdk'). Or use the automatic script 'download_3rdparty.bat' in 'scripts' folder. This will automatically download and extract GBDK to 'C:\gbdk'. This must be run as admin to be allowed access to create 'C:\gbdk' folder.
 Build gameboy hello world code using GBDK. This can be done using the automatic build script 'build.bat' provided in 'scripts' folder. This assumes the GBDK location is 'C:\gbdk'. Or manually using the command line:
 ```
 cd PATH_TO_REPO
