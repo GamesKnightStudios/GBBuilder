@@ -37,3 +37,16 @@ Run the emulator using the 'test.bat' in 'scripts' folder or using the following
 cd PATH_TO_REPO
 3rdparty\bgb\bgb\bgb.exe -rom build\helloworld.gb
 ```
+
+# Notes
+## Useful links
+| Title                                 | URL                                                                                                                 | Description                                     |
+|---------------------------------------|---------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|
+| Programming Game Boy Games using GBDK | https://videlais.com/2016/07/03/programming-game-boy-games-using-gbdk-part-1-configuring-programming-and-compiling/ | Tips for programming and advice on the hardware |
+| GBDK Playground                       | https://github.com/mrombout/gbdk_playground                                                                         | Code examples                                   |
+
+## Programming tips
+ - Objects, as they might exist in other languages, aren’t in C. And you can’t use structs to mirror this functionality, either. Most of your code will be based on functions and arrays.
+ - Whenever possible, use globals, too. Instead of defining a variable within a function, define it once and then, if possible after, re-use that same name as a way to cut down on calls to the stack.
+ - Instead of using “int”, use “UINT8” at all times.
+ - Other than in a few specific cases, most values will be in hexadecimal.
