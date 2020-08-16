@@ -29,6 +29,7 @@ if "%option_uninstall%"=="true" (
 )
 
 call ..\3rdparty\gbdk-2.95-3\download_gbdk.bat %script_params% --mirror vorboss
+call ..\3rdparty\bgb\download_bgb.bat %script_params%
 
 :: reset working directory
 cd %initcwd%
