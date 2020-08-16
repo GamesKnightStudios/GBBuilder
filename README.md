@@ -8,7 +8,8 @@ This is a simple example repository for building gameboy games using the Game Bo
 
 # Requirements
  - GBDK (Recommended: v3.2. Script provided in 3rdparty folder to quickly download the recommended version)
- - BGB (Recommended: 1.5.8. Script provided in 3rdparty folder to quickly download the latest version)
+ - BGB (Recommended: v1.5.8. Script provided in 3rdparty folder to quickly download the latest version)
+ - [Optional] GBTD (Recommened: v2.2. Script provided in 3rdparty folder to quickly download the recommended version)
 
 # Build
 Download and extract GBDK to 3rdparty gbdk folder ('3rdparty\gbdk-3.2\gbdk'). Or use the automatic script 'download_3rdparty.bat' in 'scripts' folder. This will automatically download and extract GBDK to '3rdparty\gbdk-3.2\gbdk'.

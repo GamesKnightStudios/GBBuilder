@@ -62,9 +62,16 @@ mkdir %build_dir%
 
 cd %build_dir%
 
-echo Building...
-"%gbdk_path%\bin\lcc" -Wa-l -Wl-m -Wl-j -DUSE_SFR_FOR_REG -c -o %option_example%.o ..\%src_dir%\%option_example%.c
-"%gbdk_path%\bin\lcc" -Wa-l -Wl-m -Wl-j -DUSE_SFR_FOR_REG -o %option_example%.gb %option_example%.o
+::set "addition_obj_files="
+::if "%option_example%"=="blob" (
+::    set "addition_obj_files=blob_sprite.o"
+::    "%gbdk_path%\bin\lcc" -Wa-l -Wl-m -Wl-j -DUSE_SFR_FOR_REG -c -o blob_sprite.o ..\%src_dir%\blob_sprite.c ..\%src_dir%\blob_sprite.h
+::)
+
+::echo Building...
+::"%gbdk_path%\bin\lcc" -Wa-l -Wl-m -Wl-j -DUSE_SFR_FOR_REG -c -o %option_example%.o ..\%src_dir%\%option_example%.c 
+::"%gbdk_path%\bin\lcc" -Wa-l -Wl-m -Wl-j -DUSE_SFR_FOR_REG -o %option_example%.gb %option_example%.o %addition_obj_files%
+"%gbdk_path%\bin\lcc" -Wa-l -Wl-m -Wl-j -DUSE_SFR_FOR_REG -o %option_example%.gb ..\%src_dir%\%option_example%.c
 
 echo See %build_dir% for build results.
 

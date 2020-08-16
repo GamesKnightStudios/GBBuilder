@@ -1,8 +1,9 @@
 #include <gb/gb.h>
 #include <gb/drawing.h>
 #include <stdio.h>
+#include "blob_sprite.c"
 
-UINT8 pen_x, pen_y, pen_colour, screen_x, screen_y;
+UINT8 blob_x, blob_y;
 
 UBYTE previous_KEYS = 0;
 UBYTE keys = 0;
@@ -44,19 +45,9 @@ void anyKey()
     keys;
 }
 
-void clear(){
-    // clear the screen (side wipe)
-    for (screen_x = 0; screen_x < 20; screen_x++) { // GB screen is 20 columns wide and 18 columns tall
-        for (screen_y = 0; screen_y < 18; screen_y++) { 
-            gotogxy(screen_x, screen_y);
-            wrtchr(' '); // use wrtchr to place a character when using the drawing library
-        }
-    }
-}
-
 void main() {
-    pen_x = 83, pen_y = 83, pen_colour = 3;
-
+    blob_x = 83, blob_y = 83;
+    
     // start screen (press start to continue)
     gotogxy(3,8); // set text start position
     gprintf("Press Start...");
@@ -64,37 +55,32 @@ void main() {
     gotogxy(3,8); // reset text start position
     gprintf("              "); // clear message
 
+    // load blob sprite
+    SPRITES_8x8;
+    set_sprite_data(0, 0, blob);
+    set_sprite_tile(0, 0);
+    move_sprite(0, blob_x, blob_y); // set blob sprite inital position
+    SHOW_SPRITES; // display sprites
+    
     // game loop
     while(1) {
         updateKeys(); // check key presses
-        // draw pixel if joykey pressed
+        // move sprite if joykey pressed
         if (keyPressed(J_RIGHT) || keyPressed(J_LEFT) || keyPressed(J_UP) || keyPressed(J_DOWN)){
-            // move based on joykey press
             if (keyPressed(J_RIGHT)){
-                pen_x++;
+                blob_x++;
             }
             if(keyPressed(J_LEFT)) {
-                pen_x--;
+                blob_x--;
             }
             if(keyPressed(J_UP)) {
-                pen_y--;
+                blob_y--;
             }
             if(keyPressed(J_DOWN)) {
-                pen_y++;
+                blob_y++;
             }
-            plot(pen_x, pen_y, pen_colour, SOLID); // draw pixel
+            move_sprite(0, blob_x, blob_y); // move sprite
         }
-        // change colour if 'A' is released
-        if (keyReleased(J_A)) { 
-            // change colors
-            pen_colour++;
-			if (pen_colour > 3)
-				pen_colour = 1; //ignore colour 0 as this is the background colour
-        }
-        // change colour if 'B' is released
-        if (keyReleased(J_B)) { 
-            clear(); // clear the screen (side wipe)
-		}
         // delay to control frame rate
         performantDelay(2);
     }
