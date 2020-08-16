@@ -30,6 +30,7 @@ if "%option_uninstall%"=="true" (
 
 call ..\3rdparty\gbdk-3.2\download_gbdk.bat %script_params%
 call ..\3rdparty\bgb\download_bgb.bat %script_params%
+call ..\3rdparty\gbtd-2.2\download_gbtd.bat %script_params%
 
 :: reset working directory
 cd %initcwd%
