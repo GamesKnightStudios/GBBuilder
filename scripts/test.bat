@@ -65,7 +65,7 @@ EXIT /B 0
 echo Optional arguments
 echo.
 echo --screenshot: save a screenshot on exiting emulation
-echo --example: name of example to build ('helloworld'/'blob')
+echo --example: name of example to build ('helloworld'/'draw')
 EXIT /B 0
 
 :BREAK
