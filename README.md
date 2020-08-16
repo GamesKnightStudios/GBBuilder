@@ -1,5 +1,5 @@
-# GB Hello World
-This is a simple example repository for building gameboy games using the Game Boy Developer Kit (GBDK)
+# GB Game Builder
+This is a simple example repository for building gameboy games using the Game Boy Developer Kit (GBDK).
 
 # Future improvements
  - [ ] Add Linux support
