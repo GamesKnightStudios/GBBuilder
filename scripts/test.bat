@@ -5,7 +5,7 @@ SET initcwd=%cd%
 SET scriptpath=%~dp0
 cd %scriptpath:~0,-1%
 
-set "rom_path=%scriptpath:~0,-1%\..\build\main.gb"
+set "rom_path=%scriptpath:~0,-1%\..\build\helloworld.gb"
 set "bgb_path=%scriptpath:~0,-1%\..\3rdparty\bgb\bgb\bgb.exe"
 
 call %bgb_path% -rom %rom_path%
