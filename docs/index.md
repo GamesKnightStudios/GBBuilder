@@ -1,5 +1,5 @@
 # GB Game Builder
-This is a simple example repository that explains the process of building gameboy games using the Game Boy Developer Kit (GBDK).  
+This is a simple repository that explains the process of building gameboy games using the Game Boy Developer Kit (GBDK).  
 This repository also includes some example games to try out!
 
 # Additional packages
@@ -12,19 +12,24 @@ The following packages are provided in this repository in the '3rdparty' folder:
 # Builders
 Provided for each example are both MakeFile's and CMakeLists.txt files, either can be used to build them.  
 To use CMakeLists.txt files you will need to install CMake [link](https://cmake.org/install/).  
-To use MakeFiles on Linux you will need install build-essential:
+To use MakeFile's on Linux you will need install build-essential:
 ``` bash
 sudo apt-get install build-essential
 ```
-To use MakeFile on Windows you will need to install a GNU port like MinGW or Mysys [link](https://www.ics.uci.edu/~pattis/common/handouts/mingweclipse/mingw.html) (this repository uses MinGW).
+To use MakeFile's on Windows you will need to install a GNU port like MinGW [link](https://www.ics.uci.edu/~pattis/common/handouts/mingweclipse/mingw.html) (this repository assumes using MinGW).
 
 # Build
 ## Add GBDK compiler to path
-To make building easy with cmake or makefiles add GBDK's compiler (lcc) to the environment variable.  
-In linux set the path varaible using the following command:
+To build with cmake or makefiles add GBDK's compiler (lcc) to the environment variable.  
+In linux set the path variable using the following command:
 ```
 export PATH=PATH_TO_REPO/3rdparty/gbdk-3.2/bin:$PATH
 ```
+In windows use following instructions:
+ - In Search, search for and then select: System (Control Panel)
+ - Click the Advanced system settings link.
+ - Click Environment Variables. In the section System Variables, find the PATH environment variable and select it. Click Edit. If the PATH environment variable does not exist, click New.
+ - In the Edit System Variable (or New System Variable) window, add the directory to the bin folder of GBDK to the list. Click OK. Close all remaining windows by clicking OK.
 
 ## Build
 There are three approaches to build games with GBDK; make, cmake, or directly calling the GBDK compiler.  
