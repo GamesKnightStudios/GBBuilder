@@ -1,5 +1,5 @@
 # GB Game Builder
-This is a simple example repository for building gameboy games using the Game Boy Developer Kit (GBDK).
+This is a simple support repository for quickly and easily building gameboy games using the Game Boy Developer Kit (GBDK).
 
 # Future improvements
  - [ ] Add Linux support
