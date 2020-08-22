@@ -1,22 +1,28 @@
 # GB Game Builder
-This is a simple support repository for quickly and easily building gameboy games using the Game Boy Developer Kit (GBDK).  
+This is a simple example repository for building gameboy games using the Game Boy Developer Kit (GBDK).  
 This repository also includes some example games to try out!
 
+# Future improvements
+ - [ ] Add Linux support
+
 # Requirements
- - GBDK (Recommended: v3.2. Script provided in 3rdparty folder to quickly download the recommended version)
- - BGB (Recommended: v1.5.8. Script provided in 3rdparty folder to quickly download the latest version)
- - [Optional] GBTD (Recommened: v2.2. Script provided in 3rdparty folder to quickly download the recommended version)
+ - GBDK (Recommended: v3.2. Provided in the repository in '3rdparty')
+ - BGB (Recommended: v1.5.8. Provided in the repository in '3rdparty')
+ - [Optional] GBTD (Recommened: v2.2. Provided in the repository in '3rdparty')
+ - [Optional] EZFlashJr Kernal (Recommened: Firmware v4 K1.04e. Provided in the repository in '3rdparty')
 
 # Build
-Download and extract GBDK to 3rdparty gbdk folder ('3rdparty\gbdk-3.2\gbdk'). Or use the automatic script 'download_3rdparty.bat' in 'scripts' folder. This will automatically download and extract GBDK to '3rdparty\gbdk-3.2\gbdk'.
-Build gameboy hello world code using GBDK. The helloworld example is 
-This can be done using the automatic build script 'build.bat' provided in 'scripts' folder. This assumes the GBDK location is '3rdparty\gbdk-3.2\gbdk'. Or manually using the command line:
+Some example games are provided in the 'examples' folder. To build one of these use the 'build.at' script in the 'scripts' folder providing the command line argument '--examples [NAME_OF_EXAMPLE]':
+```
+cd PATH_TO_REPO/scripts
+build.bat --example helloworld
+```
+Alternativly you can do this manually:
 ```
 cd PATH_TO_REPO
 mkdir build
 cd build
-..\3rdparty\gbdk-3.2\gbdk\bin\lcc -Wa-l -Wl-m -Wl-j -DUSE_SFR_FOR_REG -c -o helloworld.o ..\games\helloworld\helloworld.c
-..\3rdparty\gbdk-3.2\gbdk\bin\lcc -Wa-l -Wl-m -Wl-j -DUSE_SFR_FOR_REG -o helloworld.gb helloworld.o
+..\3rdparty\gbdk-3.2\bin\lcc -Wa-l -Wl-m -Wl-j -DUSE_SFR_FOR_REG -c -o helloworld.gb ..\examples\helloworld\helloworld.c
 ```
 This will build the app to a build folder in this repository.  
 The 'helloworld.gb' file in this build folder is the gameboy game that has just been compiled. 
@@ -25,10 +31,15 @@ The 'helloworld.gb' file in this build folder is the gameboy game that has just 
 ## Emulator
 You can use the .gb file generated on a gameboy cartridge however it's advised to test it out in an emulator. Provided in the repository is a download script to download BGB a game boy emulator. If you ran the 'download_3rdparty.bat' eariler then you can find this in 3rdparty\bgb in the repository.
 
-Run the emulator using the 'test.bat' in 'scripts' folder or using the following command:
+Run the emulator using the 'test.bat' in 'scripts' folder with the command line argument '--examples [NAME_OF_EXAMPLE]':
+```
+cd PATH_TO_REPO/scripts
+test.bat --examples helloworld
+```
+Alternativly you can do this manually:
 ```
 cd PATH_TO_REPO
-3rdparty\bgb\bgb\bgb.exe -rom build\helloworld.gb
+3rdparty\bgb-1.5.8\bgb.exe -rom build\helloworld.gb
 ```
 
 # Notes

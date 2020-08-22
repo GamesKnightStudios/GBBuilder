@@ -12,6 +12,7 @@ set option_installer=false
 set "option_example=helloworld"
 
 set "gbdk_version=3.2"
+set "bgb_version=1.5.8"
 
 :: find options in arguments
 set /a arg_count=0
@@ -48,7 +49,7 @@ FOR %%a IN (%*) DO (
 )
 
 ::set "gbdk_path=C:\gbdk"
-set "gbdk_path=%scriptpath:~0,-1%\..\3rdparty\gbdk-%gbdk_version%\gbdk"
+set "gbdk_path=%scriptpath:~0,-1%\..\3rdparty\gbdk-%gbdk_version%"
 set "src_dir=examples\%option_example%"
 set "build_dir=%scriptpath:~0,-1%\..\build"
 set "installer_dir=%scriptpath:~0,-1%\..\installer"
@@ -62,15 +63,6 @@ mkdir %build_dir%
 
 cd %build_dir%
 
-::set "addition_obj_files="
-::if "%option_example%"=="blob" (
-::    set "addition_obj_files=blob_sprite.o"
-::    "%gbdk_path%\bin\lcc" -Wa-l -Wl-m -Wl-j -DUSE_SFR_FOR_REG -c -o blob_sprite.o ..\%src_dir%\blob_sprite.c ..\%src_dir%\blob_sprite.h
-::)
-
-::echo Building...
-::"%gbdk_path%\bin\lcc" -Wa-l -Wl-m -Wl-j -DUSE_SFR_FOR_REG -c -o %option_example%.o ..\%src_dir%\%option_example%.c 
-::"%gbdk_path%\bin\lcc" -Wa-l -Wl-m -Wl-j -DUSE_SFR_FOR_REG -o %option_example%.gb %option_example%.o %addition_obj_files%
 "%gbdk_path%\bin\lcc" -Wa-l -Wl-m -Wl-j -DUSE_SFR_FOR_REG -o %option_example%.gb ..\%src_dir%\%option_example%.c
 
 echo See %build_dir% for build results.
@@ -82,7 +74,7 @@ if "%option_installer%"=="true" (
 
     copy "%scriptpath:~0,-1%\run.bat" "%installer_dir%\%option_example%\run.bat"
     copy "%scriptpath:~0,-1%\..\build\%option_example%.gb" "%installer_dir%\%option_example%\%option_example%.gb"
-    copy "%scriptpath:~0,-1%\..\3rdparty\bgb\bgb\bgb.exe" "%installer_dir%\%option_example%\bgb.exe"
+    copy "%scriptpath:~0,-1%\..\3rdparty\bgb-%bgb_version%\bgb.exe" "%installer_dir%\%option_example%\bgb.exe"
 
     CALL :edit_line "%installer_dir%\%option_example%\run.bat", 8 , "set name=%option_example%"
 

@@ -10,6 +10,8 @@ cd %scriptpath:~0,-1%
 set "option_example=helloworld"
 set option_screenshot=false
 
+set "bgb_version=1.5.8"
+
 :: find options in arguments
 set /a arg_count=0
 FOR %%a IN (%*) DO (
@@ -45,11 +47,11 @@ set "rom_path=%scriptpath:~0,-1%\..\build\%option_example%.gb"
 
 set "bgb_options="
 if "%option_screenshot%"=="true" (
-    echo Will save screenshot on exit
+    echo Will save screenshot on game exit
     set "bgb_options=%bgb_options%-screenonexit %initcwd%\screenshot.png "
 )
 
-set "bgb_path=%scriptpath:~0,-1%\..\3rdparty\bgb\bgb\bgb.exe"
+set "bgb_path=%scriptpath:~0,-1%\..\3rdparty\bgb-%bgb_version%\bgb.exe"
 
 echo Running emulator...
 call %bgb_path% -rom %rom_path% %bgb_options%
