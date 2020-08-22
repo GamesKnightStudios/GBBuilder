@@ -1,2 +1,4 @@
-/build
-/installer
+/3rdparty/bgb-1.5.8/bgb.ini
+/examples/sketchr/build
+/examples/blob/build
+/examples/helloworld/build
