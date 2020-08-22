@@ -10,7 +10,7 @@ The following packages are provided in this repository in the '3rdparty' folder:
  - EZFlashJr Kernal (Recommened: Firmware v4 K1.04e)
 
 # Build
-Some example games are provided in the 'examples' folder. To build one of these use the 'build.at' script in the 'scripts' folder providing the command line argument '--example [NAME_OF_EXAMPLE]':
+Some example games are provided in the 'examples' folder. To build one of these use the 'build.at' script in the 'scripts' folder providing the command line argument '--example [EXAMPLE_NAME]':
 ```
 cd PATH_TO_REPO/scripts
 build.bat --example helloworld
@@ -29,7 +29,7 @@ The 'helloworld.gb' file in this build folder is the gameboy game that has just 
 ## Emulator
 You can use the .gb file generated on a gameboy cartridge however it's advised to test it out in an emulator. Provided in the repository is a download script to download BGB a game boy emulator. If you ran the 'download_3rdparty.bat' eariler then you can find this in 3rdparty\bgb in the repository.
 
-Run the emulator using the 'test.bat' in 'scripts' folder with the command line argument '--example [NAME_OF_EXAMPLE]':
+Run the emulator using the 'test.bat' in 'scripts' folder with the command line argument '--example [EXAMPLE_NAME]':
 ```
 cd PATH_TO_REPO/scripts
 test.bat --example helloworld
