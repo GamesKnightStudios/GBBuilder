@@ -22,7 +22,7 @@ To use MakeFile's on Windows you will need to install a GNU port like MinGW [lin
 ## Add GBDK compiler to path
 To build with cmake or makefiles add GBDK's compiler (lcc) to the environment variable.  
 In linux set the path variable using the following command:
-```
+``` bash
 export PATH=PATH_TO_REPO/3rdparty/gbdk-3.2/bin:$PATH
 ```
 In windows use following instructions:
@@ -72,7 +72,7 @@ The '.gb' file in this build folder is the gameboy game that has just been compi
 
 ### Compiler
 To build on Linux use:
-```
+``` bash
 cd PATH_TO_REPO/examples/EXAMPLE_NAME
 mkdir build
 cd build
@@ -90,7 +90,7 @@ The '.gb' file in this build folder is the gameboy game that has just been compi
 
 # Run
 ## Emulator
-You can use the .gb file generated on a gameboy cartridge however it's advised to test it out in an emulator. BGB GameBoy emulator is provided in the repository in '3rdparty'.
+You can use the .gb file generated on a gameboy cartridge however it's advised to test it out in an emulator. BGB GameBoy emulator is provided in the repository in '3rdparty' (Windows only).
 
 Run the BGB emulator, right-click and select 'Load ROM...', and choose the '.gb' file you generated.  
 Or start the emulator from the command line specifying the '.gb' file to run with the '-rom' argument:
@@ -134,3 +134,4 @@ Select the game from the EZ Flash menu. The gameboy will restart and load the ga
 
 # Future improvements
  - [ ] Test Linux support (written but not tested)
+ - [ ] Add Linux instructions for emulation
