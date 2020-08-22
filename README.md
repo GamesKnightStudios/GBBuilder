@@ -4,10 +4,10 @@ This repository also includes some example games to try out!
 
 # Additional packages
 The following packages are provided in this repository in the '3rdparty' folder:
- - GameBoy Developers Kit (Recommended: v3.2)
- - BGB GameBoy Emulator (Recommended: v1.5.8)
- - Gameboy Tile Designer (Recommended: v2.2)
- - EZFlashJr Kernal (Recommended: Firmware v4 K1.04e)
+ - [GameBoy Development Kit](https://github.com/Zal0/gbdk-2020/releases/latest) (Recommended: v3.2)
+ - [BGB GameBoy Emulator](https://bgb.bircd.org/) (Recommended: v1.5.8)
+ - [Gameboy Tile Designer](http://www.devrs.com/gb/hmgd/gbtd.html) (Recommended: v2.2)
+ - [EZFlashJr](http://www.ezflash.cn/product/ezflash-junior/) Kernal (Recommended: Firmware v4 K1.04e)
 
 # Builders
 Provided for each example are both MakeFile's and CMakeLists.txt files, either can be used to build them.  
@@ -31,7 +31,7 @@ In windows use following instructions:
  - Click Environment Variables. In the section System Variables, find the PATH environment variable and select it. Click Edit. If the PATH environment variable does not exist, click New.
  - In the Edit System Variable (or New System Variable) window, add the directory to the bin folder of GBDK to the list. Click OK. Close all remaining windows by clicking OK.
 
-## Build
+## Make
 There are three approaches to build games with GBDK; make, cmake, or directly calling the GBDK compiler.  
 Each of the examples in this repository have a MakeFile and CMakeLists.txt that can be used to build them whether you are using make or cmake. Hopefull this will be useful when you build your own games to show what's needed.  
 *Note: Expects the GBDK bin directory to be in the PATH environment variable so that lcc is accessible.*
@@ -90,7 +90,10 @@ The '.gb' file in this build folder is the gameboy game that has just been compi
 
 # Run
 ## Emulator
-You can use the .gb file generated on a gameboy cartridge however it's advised to test it out in an emulator. BGB GameBoy emulator is provided in the repository in '3rdparty' (Windows only).
+You can use the .gb file generated on a gameboy cartridge however it's advised to test it out in an emulator. 
+
+## Local
+BGB GameBoy emulator is provided in the repository in '3rdparty' (Windows only).
 
 Run the BGB emulator, right-click and select 'Load ROM...', and choose the '.gb' file you generated.  
 Or start the emulator from the command line specifying the '.gb' file to run with the '-rom' argument:
@@ -98,6 +101,12 @@ Or start the emulator from the command line specifying the '.gb' file to run wit
 cd PATH_TO_REPO
 3rdparty\bgb-1.5.8\bgb.exe -rom examples\EXAMPLE_NAME\build\EXAMPLE_NAME.gb
 ```
+
+## Online
+[Googulator](www.googulator.com) is an online GameBoy emulator that runs in the browser. It relies on a Google drive for loading game files so you will need a Google account.  
+
+Sign in and link your Google drive account. Then go to the library tab, click 'Add games' and select 
+
 
 ## EZ Flash Jr
 You can flash the .gb file generated to a gameboy cartridge. This is easiest with EZ Flash Jr [link](http://www.ezflash.cn/product/ezflash-junior/).  
