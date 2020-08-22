@@ -6,8 +6,8 @@ This repository also includes some example games to try out!
 The following packages are provided in this repository in the '3rdparty' folder:
  - GameBoy Developers Kit (Recommended: v3.2)
  - BGB GameBoy Emulator (Recommended: v1.5.8)
- - Gameboy Tile Designer (Recommened: v2.2)
- - EZFlashJr Kernal (Recommened: Firmware v4 K1.04e)
+ - Gameboy Tile Designer (Recommended: v2.2)
+ - EZFlashJr Kernal (Recommended: Firmware v4 K1.04e)
 
 # Build
 Some example games are provided in the 'examples' folder. To build one of these use the 'build.at' script in the 'scripts' folder providing the command line argument '--example [EXAMPLE_NAME]':
