@@ -60,7 +60,7 @@ cd PATH_TO_REPO\examples\EXAMPLE_NAME
 mkdir build
 cd build
 cmake .. -G "MinGW Makefiles"
-make -f MakeFile
+mingw32-make
 ```
 These will build the example game in the folder named 'build'.  
 The '.gb' file in this build folder is the gameboy game that has just been compiled. 
