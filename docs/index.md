@@ -1,10 +1,6 @@
 # GB Game Builder
-This is a simple example repository for building gameboy games using the Game Boy Developer Kit (GBDK).
-
-# Future improvements
- - [ ] Add Linux support
-
-# Known issues
+This is a simple support repository for quickly and easily building gameboy games using the Game Boy Developer Kit (GBDK).  
+This repository also includes some example games to try out!
 
 # Requirements
  - GBDK (Recommended: v3.2. Script provided in 3rdparty folder to quickly download the recommended version)
@@ -37,10 +33,8 @@ cd PATH_TO_REPO
 
 # Notes
 ## Useful links
-| Title                                 | URL                                                                                                                 | Description                                     |
-|---------------------------------------|---------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|
-| Programming Game Boy Games using GBDK | https://videlais.com/2016/07/03/programming-game-boy-games-using-gbdk-part-1-configuring-programming-and-compiling/ | Tips for programming and advice on the hardware |
-| GBDK Playground                       | https://github.com/mrombout/gbdk_playground                                                                         | Code examples                                   |
+**Programming Game Boy Games using GBDK ([link](https://videlais.com/2016/07/03/programming-game-boy-games-using-gbdk-part-1-configuring-programming-and-compiling/)):** Tips for programming and advice on the hardware  
+**GBDK Playground ([link](https://github.com/mrombout/gbdk_playground)):** Game code examples
 
 ## Programming tips
  - Objects, as they might exist in other languages, aren’t in C. And you can’t use structs to mirror this functionality, either. Most of your code will be based on functions and arrays.
