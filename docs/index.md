@@ -1,37 +1,49 @@
-## Welcome to GitHub Pages
+# GB Game Builder
+This is a simple example repository for building gameboy games using the Game Boy Developer Kit (GBDK).
 
-You can use the [editor on GitHub](https://github.com/GamesKnightStudios/GBBuilder/edit/master/docs/index.md) to maintain and preview the content for your website in Markdown files.
+# Future improvements
+ - [ ] Add Linux support
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+# Known issues
 
-### Markdown
+# Requirements
+ - GBDK (Recommended: v3.2. Script provided in 3rdparty folder to quickly download the recommended version)
+ - BGB (Recommended: v1.5.8. Script provided in 3rdparty folder to quickly download the latest version)
+ - [Optional] GBTD (Recommened: v2.2. Script provided in 3rdparty folder to quickly download the recommended version)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+# Build
+Download and extract GBDK to 3rdparty gbdk folder ('3rdparty\gbdk-3.2\gbdk'). Or use the automatic script 'download_3rdparty.bat' in 'scripts' folder. This will automatically download and extract GBDK to '3rdparty\gbdk-3.2\gbdk'.
+Build gameboy hello world code using GBDK. The helloworld example is 
+This can be done using the automatic build script 'build.bat' provided in 'scripts' folder. This assumes the GBDK location is '3rdparty\gbdk-3.2\gbdk'. Or manually using the command line:
+```
+cd PATH_TO_REPO
+mkdir build
+cd build
+..\3rdparty\gbdk-3.2\gbdk\bin\lcc -Wa-l -Wl-m -Wl-j -DUSE_SFR_FOR_REG -c -o helloworld.o ..\games\helloworld\helloworld.c
+..\3rdparty\gbdk-3.2\gbdk\bin\lcc -Wa-l -Wl-m -Wl-j -DUSE_SFR_FOR_REG -o helloworld.gb helloworld.o
+```
+This will build the app to a build folder in this repository.  
+The 'helloworld.gb' file in this build folder is the gameboy game that has just been compiled. 
 
-```markdown
-Syntax highlighted code block
+# Run
+## Emulator
+You can use the .gb file generated on a gameboy cartridge however it's advised to test it out in an emulator. Provided in the repository is a download script to download BGB a game boy emulator. If you ran the 'download_3rdparty.bat' eariler then you can find this in 3rdparty\bgb in the repository.
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+Run the emulator using the 'test.bat' in 'scripts' folder or using the following command:
+```
+cd PATH_TO_REPO
+3rdparty\bgb\bgb\bgb.exe -rom build\helloworld.gb
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+# Notes
+## Useful links
+| Title                                 | URL                                                                                                                 | Description                                     |
+|---------------------------------------|---------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|
+| Programming Game Boy Games using GBDK | https://videlais.com/2016/07/03/programming-game-boy-games-using-gbdk-part-1-configuring-programming-and-compiling/ | Tips for programming and advice on the hardware |
+| GBDK Playground                       | https://github.com/mrombout/gbdk_playground                                                                         | Code examples                                   |
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/GamesKnightStudios/GBBuilder/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+## Programming tips
+ - Objects, as they might exist in other languages, aren’t in C. And you can’t use structs to mirror this functionality, either. Most of your code will be based on functions and arrays.
+ - Whenever possible, use globals, too. Instead of defining a variable within a function, define it once and then, if possible after, re-use that same name as a way to cut down on calls to the stack.
+ - Instead of using “int”, use “UINT8” at all times.
+ - Other than in a few specific cases, most values will be in hexadecimal.
