@@ -2,9 +2,6 @@
 This is a simple example repository for building gameboy games using the Game Boy Developer Kit (GBDK).  
 This repository also includes some example games to try out!
 
-# Future improvements
- - [ ] Add Linux support
-
 # Additional packages
 The following packages are provided in this repository in the '3rdparty' folder:
  - GameBoy Developers Kit (Recommended: v3.2)
@@ -64,13 +61,14 @@ Select the game from the EZ Flash menu. The gameboy will restart and load the ga
 
 # Notes
 ## Useful links
-| Title                                 | URL                                                                                                                 | Description                                     |
-|---------------------------------------|---------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|
-| Programming Game Boy Games using GBDK | https://videlais.com/2016/07/03/programming-game-boy-games-using-gbdk-part-1-configuring-programming-and-compiling/ | Tips for programming and advice on the hardware |
-| GBDK Playground                       | https://github.com/mrombout/gbdk_playground                                                                         | Code examples                                   |
+**Programming Game Boy Games using GBDK ([link](https://videlais.com/2016/07/03/programming-game-boy-games-using-gbdk-part-1-configuring-programming-and-compiling/)):** Tips for programming and advice on the hardware  
+**GBDK Playground ([link](https://github.com/mrombout/gbdk_playground)):** Game code examples
 
 ## Programming tips
  - Objects, as they might exist in other languages, aren’t in C. And you can’t use structs to mirror this functionality, either. Most of your code will be based on functions and arrays.
  - Whenever possible, use globals, too. Instead of defining a variable within a function, define it once and then, if possible after, re-use that same name as a way to cut down on calls to the stack.
  - Instead of using “int”, use “UINT8” at all times.
  - Other than in a few specific cases, most values will be in hexadecimal.
+
+# Future improvements
+ - [ ] Add Linux support
