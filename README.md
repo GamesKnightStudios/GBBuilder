@@ -103,7 +103,7 @@ cd PATH_TO_REPO
 ```
 
 ## Online
-[Googulator](www.googulator.com) is an online GameBoy emulator that runs in the browser. It relies on a Google drive for loading game files so you will need a Google account.  
+[Googulator](https://www.googulator.com) is an online GameBoy emulator that runs in the browser. It relies on a Google drive for loading game files so you will need a Google account.  
 
 Sign in and link your Google drive account. Then go to the library tab, click 'Add games' and select 
 
