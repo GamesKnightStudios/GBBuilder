@@ -3,3 +3,5 @@
 /examples/blob/build
 /examples/helloworld/build
 /3rdparty/bgb-1.5.8/bgbrecovery.sna
+/3rdparty/gbtd-2.2/Export.inc
+/3rdparty/gbtd-2.2/Export.z80
